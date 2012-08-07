@@ -13,7 +13,10 @@ confirmed_per_line = []
 
 screen = curses.initscr()
 curses.noecho()
-curses.curs_set(0)
+try:
+    curses.curs_set(0)
+except:
+    pass
 screen.keypad(1)
 
 def iterate(increase = False):
