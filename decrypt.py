@@ -55,4 +55,4 @@ try:
 finally:
     curses.endwin()
 for line in lines:
-    print line
+    print(line)
