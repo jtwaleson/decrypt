@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import curses
 import time
-import sys
 import fileinput
 import random
 import string
