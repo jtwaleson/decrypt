@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name             = "decrypt",
-    version          = "0.1.0",
+    version          = "0.1.1",
     description      = "Pipe programs through decrypt to make your boss think you are l33t",
     long_description = open('README.md').read(),
     author           = "jtwaleson",

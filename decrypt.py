@@ -36,8 +36,8 @@ def main():
 
 
 def iterate(increase=False):
-    still_random = 0
     global chance, confirmed_per_line, lines
+    still_random = 0
     if increase:
         chance += 0.01
     screen.erase()
