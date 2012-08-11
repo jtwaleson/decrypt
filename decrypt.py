@@ -10,6 +10,7 @@ lines = []
 chance = 0.1
 confirmed_per_line = []
 
+
 def main():
     curses.noecho()
     try:
@@ -23,7 +24,7 @@ def main():
             lines.append(line.rstrip())
             iterate()
         fileinput.close()
-        while iterate(increase = True):
+        while iterate(increase=True):
             pass
         time.sleep(2)
     except KeyboardInterrupt:
@@ -33,13 +34,14 @@ def main():
     for line in lines:
         print(line)
 
-def iterate(increase = False):
+
+def iterate(increase=False):
     still_random = 0
     global chance, confirmed_per_line, lines
     if increase:
         chance += 0.01
     screen.erase()
-    (y,x) = screen.getmaxyx()
+    (y, x) = screen.getmaxyx()
     final_line = len(lines)
     if final_line > y:
         first_line = final_line - y
@@ -47,7 +49,7 @@ def iterate(increase = False):
         first_line = 0
     for line_num in range(first_line, final_line):
         line = lines[line_num]
-        for i in [i  for i in range(min(x, len(line)))]:
+        for i in [i for i in range(min(x, len(line)))]:
             if i not in confirmed_per_line[line_num]:
                 still_random += 1
                 if random.random() < chance:
