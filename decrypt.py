@@ -49,16 +49,18 @@ def iterate(increase=False):
         first_line = 0
     for line_num in range(first_line, final_line):
         line = lines[line_num]
-        for i in [i for i in range(min(x, len(line)))]:
-            if i not in confirmed_per_line[line_num]:
-                still_random += 1
-                if random.random() < chance:
-                    confirmed_per_line[line_num].append(i)
-                char = random.choice(string.punctuation)
-            else:
-                char = line[i]
+        for col in range(min(x, len(line))):
             try:
-                screen.addch(line_num - first_line, i, char)
+                if col not in confirmed_per_line[line_num]:
+                    still_random += 1
+                    if random.random() < chance:
+                        confirmed_per_line[line_num].append(col)
+                    screen.addch(line_num - first_line,
+                                 col,
+                                 random.choice(string.punctuation),
+                                 curses.A_REVERSE)
+                else:
+                    screen.addch(line_num - first_line, col, line[col])
             except:
                 pass
 
