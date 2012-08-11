@@ -5,18 +5,33 @@ import fileinput
 import random
 import string
 
+screen = curses.initscr()
 lines = []
 chance = 0.1
 confirmed_per_line = []
 
-
-screen = curses.initscr()
-curses.noecho()
-try:
-    curses.curs_set(0)
-except:
-    pass
-screen.keypad(1)
+def main():
+    curses.noecho()
+    try:
+        curses.curs_set(0)
+    except:
+        pass
+    screen.keypad(1)
+    try:
+        for line in fileinput.input():
+            confirmed_per_line.append([])
+            lines.append(line.rstrip())
+            iterate()
+        fileinput.close()
+        while iterate(increase = True):
+            pass
+        time.sleep(2)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        curses.endwin()
+    for line in lines:
+        print(line)
 
 def iterate(increase = False):
     still_random = 0
@@ -39,23 +54,12 @@ def iterate(increase = False):
         random_line = ''.join(random.choice(string.punctuation) if col not in confirmed_per_line[line_num] else line[col] for col in range(min(len(line), x)))
         try:
             screen.addstr(line_num - first_line, 0, random_line)
-        except Exception:
+        except:
             pass
 
     screen.refresh()
     time.sleep(0.1)
     return still_random > 0
 
-try:
-    for line in fileinput.input():
-        confirmed_per_line.append([])
-        lines.append(line.rstrip())
-        iterate()
-    fileinput.close()
-    while iterate(True):
-        pass
-    time.sleep(2)
-finally:
-    curses.endwin()
-for line in lines:
-    print(line)
+if __name__ == '__main__':
+    main()
