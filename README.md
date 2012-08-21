@@ -3,12 +3,14 @@ This program takes over the screen, prints flickering random characters and slow
 
 ## Examples
 
-Do this for example:
+Do this for example on Linux:
 ```tree ~/Downloads | ./decrypt.py```
 
 or
 ```jp2a my_favourite_cat.jpg --term-width | ./decrypt.py```
 
+On Mac:
+```ls ~/Downloads -R | ./decrypt.py```
 
 
 ## Use case
