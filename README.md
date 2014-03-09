@@ -28,3 +28,9 @@ Warning: keeps the entire input in memory and uses an O(n^2) algorithm. It is no
 ## Screenshot
 
 <a href="http://www.youtube.com/watch?v=DoDoOtlomsM">YouTube action shots</a> - Thanks, Alex Willmer
+
+
+## Seen in the wild (pull request if you've seen another one)
+
+ * http://sysadmincasts.com/
+
