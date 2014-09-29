@@ -68,5 +68,3 @@ def iterate(increase=False):
     time.sleep(0.1)
     return still_random > 0
 
-if __name__ == '__main__':
-    main()

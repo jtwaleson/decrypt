@@ -7,6 +7,6 @@ setup(
     long_description = open('README.md').read(),
     author           = "jtwaleson",
     url              = "https://github.com/jtwaleson/decrypt",
-    packages         = find_packages(), #["decrypt"],
-    entry_points     = {'console_scripts': ['decrypt = decrypt:main']},
+    packages         = ["decrypt"],
+    entry_points     = {'console_scripts': ['decrypt = decrypt.decrypt:main']},
 )
