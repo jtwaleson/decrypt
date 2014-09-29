@@ -60,7 +60,7 @@ def iterate(increase=False):
                                  random.choice(string.punctuation),
                                  curses.A_REVERSE)
                 else:
-                    screen.addch(line_num - first_line, col, line[col])
+                    screen.addstr(line_num - first_line, col, line[col])
             except:
                 pass
 
