@@ -60,7 +60,7 @@ def iterate(increase=False):
                                  random.choice(string.punctuation),
                                  curses.A_REVERSE)
                 else:
-                    screen.addch(line_num - first_line, col, line[col])
+                    screen.addstr(line_num - first_line, col, line[col])
             except:
                 pass
 
@@ -68,5 +68,3 @@ def iterate(increase=False):
     time.sleep(0.1)
     return still_random > 0
 
-if __name__ == '__main__':
-    main()
