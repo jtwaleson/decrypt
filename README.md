@@ -1,6 +1,7 @@
 # Decrypt
 This program takes over the screen, prints flickering random characters and slowly makes the piped content (or input file) visible. Effectively, it does what hackers on tv-shows have.
 
+
 ## Examples
 
 Do this for example on Linux:
